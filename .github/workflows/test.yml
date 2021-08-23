@@ -17,7 +17,7 @@ jobs:
         run: mv target/*-SNAPSHOT.jar target/app.jar
       - name: Run on BG
         run: |
-          java -jar target/app.jar &
+          java -jar target/app.jar --server.port=8888 &
           echo $! > app.pid
       - uses: matt-ball/newman-action@master
         with:
